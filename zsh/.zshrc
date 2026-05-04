@@ -1,9 +1,3 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
-# ===========================================================
-
-
-
 ### EXPORTS & OPTIONS
 
 export ZSH=$HOME/.zsh
@@ -40,10 +34,3 @@ alias gl="git log"
 alias gp="git pull"
 alias gr="git rebase"
 alias gs="git status"
-
-
-
-# ===========================================================
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
-
