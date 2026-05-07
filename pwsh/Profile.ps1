@@ -1,7 +1,7 @@
 $isInteractive = -not [Console]::IsInputRedirected -and -not [Console]::IsOutputRedirected
 
 $dotfilesRoot = Split-Path -Parent $PSScriptRoot
-$themePath = Join-Path $dotfilesRoot "themes\catppuccino.omp.json"
+$themePath = Join-Path $dotfilesRoot "oh-my-posh\theme.omp.json"
 $env:POSH_GIT_ENABLED = $true
 
 function Register-Git {

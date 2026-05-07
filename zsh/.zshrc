@@ -19,7 +19,7 @@ fpath=($ZSH/plugins/zsh-completions/src $fpath)
 
 ### THEME
 
-eval "$(oh-my-posh init zsh --config $DOTFILES/themes/catppuccino.omp.json)"
+eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/theme.omp.json)"
 
 ### ALIASES
 
