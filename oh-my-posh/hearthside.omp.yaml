@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+final_space: true
+version: 4
+palette:
+  red: "#E95678"
+  salmon: "#F09483"
+  purple: "#B877DB"
+  blue: "#25B0BC"
+  white: "#BBBBBB"
+  text: "#0E0F13"
+maps:
+  user_name:
+    root: "󱐋" # lightning bolt
+    vinh: "󰝴 " # ninja
+  host_name:
+    VADER: " 󰣘" # death star
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: os
+        style: diamond
+        background: "p:purple"
+        foreground: "p:white"
+        leading_diamond: "\ue0c7"
+        template: " {{.Icon}} "
+      - type: session
+        style: powerline
+        background: "p:red"
+        foreground: "p:text"
+        powerline_symbol: "\ue0c6"
+        template: "{{ .UserName }}@{{ .HostName }} "
+      - type: path
+        style: powerline
+        background: "p:salmon"
+        foreground: "p:text"
+        powerline_symbol: "\ue0c6"
+        options:
+          home_icon: "~"
+          style: agnoster_full
+        template: " \uf07b {{ .Path }} "
+      - type: text
+        style: plain
+        foreground: "p:blue"
+        template: "\ue0c7\ue0b0"
+  - type: rprompt
+    alignment: right
+    segments:
+      - type: git
+        style: powerline
+        background: "p:purple"
+        foreground: "p:text"
+        powerline_symbol: "\ue0c7"
+        invert_powerline: true
+        options:
+          branch_icon: "\ue725 "
+          cherry_pick_icon: "\ue29b "
+          commit_icon: "\uf417 "
+          fetch_status: true
+          fetch_upstream_icon: true
+          merge_icon: "\ue727 "
+          no_commits_icon: "\uf0c3 "
+          rebase_icon: "\ue728 "
+          revert_icon: "\uf0e2 "
+          tag_icon: "\uf412 "
+        template: " {{ .HEAD }} "
+      - type: time
+        style: diamond
+        background: "p:salmon"
+        foreground: "p:text"
+        trailing_diamond: "\ue0c6"
+        options:
+          time_format: "3:04:05 PM"
+        template: " \uf4ab {{ .CurrentDate | date .Format }} "

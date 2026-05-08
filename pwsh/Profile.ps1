@@ -1,7 +1,8 @@
 $isInteractive = -not [Console]::IsInputRedirected -and -not [Console]::IsOutputRedirected
 
 $dotfilesRoot = Split-Path -Parent $PSScriptRoot
-$themePath = Join-Path $dotfilesRoot "oh-my-posh\theme.omp.json"
+$themeName = "hearthside"
+$themePath = Join-Path $dotfilesRoot "oh-my-posh\$themeName.omp.yaml"
 $env:POSH_GIT_ENABLED = $true
 
 function Register-Git {
@@ -30,6 +31,7 @@ if ($isInteractive) {
     function rmf { Remove-Item -LiteralPath $args[0] -Force }
     function rmr { Remove-Item -LiteralPath $args[0] -Recurse }
     function rmrf { Remove-Item -LiteralPath $args[0] -Recurse -Force }
+    Set-Alias omp "oh-my-posh"
 
     # Modules
     if (Get-Module -ListAvailable -Name Terminal-Icons) {
