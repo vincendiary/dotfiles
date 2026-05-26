@@ -19,6 +19,7 @@ function Register-Git {
 if ($isInteractive) {
     # Aliases
     function gfo { & git fetch origin "$($args[0]):$($args[0])" }
+    function ghcl { & git clone "git@github.com:$($args[0]).git" }
     Register-Git ga "add"
     Register-Git gb "branch"
     Register-Git gco "checkout"
@@ -28,10 +29,20 @@ if ($isInteractive) {
     Register-Git gds "diff --staged"
     Register-Git gcl "clone"
     Register-Git gf "fetch --all"
+    Register-Git pull "pull"
+    Register-Git gpf "push --force-with-lease"
+    Register-Git grb "rebase"
+    Register-Git gft "fetch --tags --force"
     function rmf { Remove-Item -LiteralPath $args[0] -Force }
     function rmr { Remove-Item -LiteralPath $args[0] -Recurse }
     function rmrf { Remove-Item -LiteralPath $args[0] -Recurse -Force }
+    function cpy { & cat $args[0] | clip.exe }
+    function fpg { & flutter pub get }
+    function dbr { & dart run build_runner build }
+    Set-Alias code "cursor"
     Set-Alias omp "oh-my-posh"
+    Set-Alias cl "clear"
+    function reload { Invoke-Expression ". $PROFILE" }
 
     # Modules
     if (Get-Module -ListAvailable -Name Terminal-Icons) {
