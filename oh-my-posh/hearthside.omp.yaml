@@ -21,15 +21,15 @@ blocks:
       - type: os
         style: diamond
         background: "p:purple"
-        foreground: "p:white"
+        foreground: "p:text"
         leading_diamond: "\ue0c7"
-        template: " {{.Icon}} "
+        template: "  {{.Icon}} "
       - type: session
         style: powerline
         background: "p:red"
         foreground: "p:text"
         powerline_symbol: "\ue0c6"
-        template: "{{ .UserName }}@{{ .HostName }} "
+        template: " {{ .UserName }}@{{ .HostName }} "
       - type: path
         style: powerline
         background: "p:salmon"
@@ -39,11 +39,7 @@ blocks:
           home_icon: "~"
           style: agnoster_full
         template: " \uf07b {{ .Path }} "
-      - type: text
-        style: plain
-        foreground: "p:blue"
-        template: "\ue0c7\ue0b0"
-  - type: rprompt
+  - type: prompt
     alignment: right
     segments:
       - type: git
@@ -63,7 +59,7 @@ blocks:
           rebase_icon: "\ue728 "
           revert_icon: "\uf0e2 "
           tag_icon: "\uf412 "
-        template: " {{ .HEAD }} "
+        template: "  {{ .HEAD }} "
       - type: time
         style: diamond
         background: "p:salmon"
@@ -71,4 +67,12 @@ blocks:
         trailing_diamond: "\ue0c6"
         options:
           time_format: "3:04:05 PM"
-        template: " \uf4ab {{ .CurrentDate | date .Format }} "
+        template: "  \uf4ab {{ .CurrentDate | date .Format }} "
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: text
+        style: plain
+        foreground: "p:blue"
+        template: " \u279c "
