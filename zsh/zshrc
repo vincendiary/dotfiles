@@ -1,5 +1,20 @@
 # Shared config
 
+# PATH
+
+typeset -U path PATH
+path=(
+  $HOME/.local/bin
+  $HOME/.cargo/bin
+  $path
+)
+
+# ENV
+
+export DOTFILES=$HOME/Projects/dotfiles
+export SUDO_EDITOR="$(command -v nvim)"
+export NVM_DIR="$HOME/.nvm"
+export SDKMAN_DIR="$HOME/.sdkman"
 export ZSH=$HOME/.zsh
 export HISTFILE=$ZSH/.zsh_history
 export HISTSIZE=20000 # size of history file
@@ -13,6 +28,12 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
+# gvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ### THEME
 
@@ -43,12 +64,16 @@ bindkey '^[[1;5C' forward-word
 # Ctrl + Backspace to delete the previous word
 bindkey '^H' backward-kill-word
 
+# Source OS-specific files if they exist
 
-# Sources OS-specific files if they exist
-
-export DOTFILES=$HOME/Projects/dotfiles
 OS_FILE="$DOTFILES/zsh/zshrc-$(uname -s)"
 if [ -f "$OS_FILE" ]; then
   source "$OS_FILE"
 fi
+
+# Add pnpm to PATH (PNPM_HOME is different based on OS)
+path=("$PNPM_HOME" $path)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 

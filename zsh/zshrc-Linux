@@ -1,29 +1,11 @@
-### EXPORTS & OPTIONS
+# ENV
 
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/.cargo/bin
-export SUDO_EDITOR=/usr/bin/nvim
+export PNPM_HOME="$HOME/.local/share/pnpm"
 
-### ALIASES
+# Aliases
 
 alias ls="ls --color=auto"
 
+# linuxbrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
-# pnpm
-export PNPM_HOME="/home/vee/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-[[ -s "/home/vee/.gvm/scripts/gvm" ]] && source "/home/vee/.gvm/scripts/gvm"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
