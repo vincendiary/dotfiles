@@ -1,17 +1,11 @@
-### EXPORTS & OPTIONS
+# Shared config
 
 export ZSH=$HOME/.zsh
-export DOTFILES=$HOME/Projects/dotfiles
-export PATH=$PATH:/home/vee/.local/bin
-export PATH=$PATH:/home/vee/.cargo/bin
-export SUDO_EDITOR="/usr/bin/nvim"
-
-# zsh history
 export HISTFILE=$ZSH/.zsh_history
-export HISTSIZE=20000			# size of history file
-export SAVEHIST=20000			# how many lines to save
-setopt HIST_IGNORE_ALL_DUPS		# history won't save duplicates
-setopt HIST_FIND_NO_DUPS		# history won't show duplicates on search
+export HISTSIZE=20000 # size of history file
+export SAVEHIST=20000 # how many lines to save
+setopt HIST_IGNORE_ALL_DUPS # history won't save duplicates
+setopt HIST_FIND_NO_DUPS # history won't show duplicates on search
 
 ### PLUGINS & COMPLETIONS
 
@@ -26,43 +20,35 @@ eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/hearthside.omp.yaml)"
 
 ### ALIASES
 
-alias ls="ls -G --color=auto"
-
-# git
 alias ga="git add"
-alias gb="git branch"
 alias gc="git commit"
 alias gco="git checkout"
-alias gl="git log"
-alias gp="git pull"
-alias gr="git rebase"
+alias grb="git rebase"
 alias gs="git status"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+# Functions
 
-# pnpm
-export PNPM_HOME="/home/vee/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
+gfo() {
+  git fetch origin $1:$1
+}
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Keybinds
 
-[[ -s "/home/vee/.gvm/scripts/gvm" ]] && source "/home/vee/.gvm/scripts/gvm"
-
+# Ctrl + up/down to search matching history
 bindkey '^[[1;5A' history-beginning-search-backward
 bindkey '^[[1;5B' history-beginning-search-forward
 # Ctrl + Left/Right arrow to skip words
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
-
 # Ctrl + Backspace to delete the previous word
 bindkey '^H' backward-kill-word
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Sources OS-specific files if they exist
+
+export DOTFILES=$HOME/Projects/dotfiles
+OS_FILE="$DOTFILES/zsh/zshrc-$(uname -s)"
+if [ -f "$OS_FILE" ]; then
+  source "$OS_FILE"
+fi
+
