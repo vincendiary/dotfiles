@@ -47,6 +47,7 @@ alias gc="git commit"
 alias gco="git checkout"
 alias grb="git rebase"
 alias gs="git status"
+alias gl="git log --oneline"
 
 # Functions
 
@@ -60,6 +61,9 @@ killport() {
   else
     kill $(lsof -t -i:$1)
   fi
+}
+ghcl() {
+  git clone git@github.com:$1.git $2
 }
 
 # Keybinds
@@ -88,7 +92,7 @@ path=("$PNPM_HOME/bin" $path)
 
 
 # bun completions
-[ -s "/Users/vinh/.bun/_bun" ] && source "/Users/vinh/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
