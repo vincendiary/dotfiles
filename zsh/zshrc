@@ -28,8 +28,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
-# gvm
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# gvm (interactive shells only — its chpwd hook errors in non-interactive shells)
+[[ -o interactive && -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -41,6 +41,7 @@ eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/hearthside.omp.yaml)"
 
 ### ALIASES
 
+alias reload="source $HOME/.zshrc"
 alias ga="git add"
 alias gc="git commit"
 alias gco="git checkout"
@@ -51,6 +52,14 @@ alias gs="git status"
 
 gfo() {
   git fetch origin $1:$1
+}
+killport() {
+  port=$(lsof -t -i:$1)
+  if [[ -z $port ]]; then
+    echo "nothing running on port $1"
+  else
+    kill $(lsof -t -i:$1)
+  fi
 }
 
 # Keybinds
@@ -72,8 +81,15 @@ if [ -f "$OS_FILE" ]; then
 fi
 
 # Add pnpm to PATH (PNPM_HOME is different based on OS)
-path=("$PNPM_HOME" $path)
+path=("$PNPM_HOME/bin" $path)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+
+# bun completions
+[ -s "/Users/vinh/.bun/_bun" ] && source "/Users/vinh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
