@@ -1,8 +1,0 @@
-# ENV
-
-export PNPM_HOME="$HOME/Library/pnpm"
-
-# Aliases
-
-alias ls="ls -G"
-
