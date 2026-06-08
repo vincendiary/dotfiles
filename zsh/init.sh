@@ -12,8 +12,7 @@ echo "Backup created at ~/.zshrc_backup"
 echo "Creating zsh directories and files..."
 mkdir -p $ZSH/plugins
 touch $ZSH/.zsh_history
-cp $SCRIPT_DIR/.zshrc $ZSH/.zshrc
-ln -s $ZSH/.zshrc $HOME/.zshrc
+ln -s $SCRIPT_DIR/zshrc $HOME/.zshrc
 echo "Directories and files created in ~/.zsh/"
 
 echo "Cloning plugins..."
@@ -23,4 +22,3 @@ git clone git@github.com:zsh-users/zsh-completions.git $ZSH/plugins/zsh-completi
 echo "Plugins setup in ~/.zsh/plugins/"
 
 echo "Success! Reload the terminal using `source ~/.zshrc` to load new shell"
-

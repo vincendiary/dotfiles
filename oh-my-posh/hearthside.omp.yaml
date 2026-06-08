@@ -12,6 +12,7 @@ maps:
   user_name:
     root: "󱐋" # lightning bolt
     vinh: "󰝴 " # ninja
+    vee: "\ue208 " # storm
   host_name:
     VADER: " 󰣘" # death star
 blocks:
