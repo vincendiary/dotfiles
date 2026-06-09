@@ -1,5 +1,5 @@
 shell-integration = zsh
-theme = light:One Half Light,dark:One Dark Two
+theme = One Dark Two
 keybind = ctrl+v=paste_from_clipboard
 background-opacity = 0.95
 background-blur = 16

@@ -7,3 +7,6 @@
 [submodule "zsh/.zsh/plugins/zsh-completions"]
 	path = zsh/.zsh/plugins/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions
+[submodule "agents"]
+	path = agents
+	url = git@github.com:vincendiary/agents.git
