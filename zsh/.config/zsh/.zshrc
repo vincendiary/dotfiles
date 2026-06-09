@@ -12,6 +12,10 @@ path=(
 
 ## Env
 
+export BUN_INSTALL="$HOME/.bun"
+export NVM_DIR="$HOME/.nvm"
+export SDKMAN_DIR="$HOME/.sdkman"
+export GVM_DIR="$HOME/.gvm"
 export HISTFILE=$ZDOTDIR/.zsh_history
 export HISTSIZE=20000
 export SAVEHIST=20000
@@ -77,10 +81,15 @@ alias gco="git checkout"
 alias grb="git rebase"
 alias gs="git status"
 alias gl="git log --oneline"
+alias pull="git pull"
+alias push="git push"
+alias gsubpull="git submodule update --init --recursive"
 alias ls="eza --icons=always"
 
 ## Functions
 
+gcm() { git commit -m "$1"; }
+gca() { git commit --amend; }
 gfo() { git fetch origin $1:$1; }
 killport() {
 	local port=$(lsof -t -i:$1)
@@ -91,6 +100,7 @@ killport() {
 	fi
 }
 ghcl() { git clone git@github.com:$1.git $2; }
+ghsub() { git submodule add git@github.com:$1.git $2; }
 keep_current_path() {
 	command -v wslpath &>/dev/null &&
 		printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
