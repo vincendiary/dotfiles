@@ -6,7 +6,7 @@ local files=(
 	options
 	plugins
 	completions
-	keybindings
+	keybinds
 	functions
 	aliases
 )
