@@ -1,8 +1,9 @@
 [user]
 	email = vincentn337@gmail.com
 	name = vincendiary
+	signingkey = /home/vee/.ssh/id_ed25519.pub
 [core]
-	editor = nvim
+	editor = cursor
 	pager = delta
 
 [interactive]
@@ -13,3 +14,7 @@
 
 [merge]
 	conflictStyle = zdiff3
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true

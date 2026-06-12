@@ -3,3 +3,7 @@
 .zcompdump.*
 .zsh_history
 .zhistory
+.zshrc.local
+
+/.claude/
+/.codex/

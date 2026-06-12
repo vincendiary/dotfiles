@@ -21,12 +21,12 @@ alias gsubpull="git submodule update --init --recursive"
 # Reload
 alias reload="source $ZDOTDIR/.zshrc"
 alias realias="source $ZDOTDIR/aliases.zsh"
-alias reoptions="source $ZDOTDIR/options.zsh"
-alias reexports="source $ZDOTDIR/exports.zsh"
-alias refunctions="source $ZDOTDIR/functions.zsh"
-alias rekeybinds="source $ZDOTDIR/keybinds.zsh"
-alias recompletions="source $ZDOTDIR/completions.zsh"
-alias replugins="source $ZDOTDIR/plugins.zsh"
+alias reoption="source $ZDOTDIR/options.zsh"
+alias reexport="source $ZDOTDIR/exports.zsh"
+alias refunction="source $ZDOTDIR/functions.zsh"
+alias rekeybind="source $ZDOTDIR/keybinds.zsh"
+alias recompletion="source $ZDOTDIR/completions.zsh"
+alias replugin="source $ZDOTDIR/plugins.zsh"
 
 # Misc
 alias ls="eza --icons=always"
