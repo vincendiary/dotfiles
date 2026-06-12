@@ -16,6 +16,9 @@ alias gl="git log --oneline --graph --decorate"
 alias gf="git fetch"
 alias gp="git pull"
 alias push="git push"
+
+## Submodules
+alias gsub="git submodule"
 alias gsubpull="git submodule update --init --recursive"
 
 # Reload

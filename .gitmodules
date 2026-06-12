@@ -9,4 +9,4 @@
 	url = git@github.com:zsh-users/zsh-completions.git
 [submodule "agents/.agents"]
 	path = agents/.agents
-	url = git@github.com:vincendiary/agents.git
+	url = git@github.com:vincendiary/agents
