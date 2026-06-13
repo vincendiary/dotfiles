@@ -6,7 +6,7 @@ gca() { git commit --amend; }
 gfo() { git fetch origin $1:$1; }
 
 # Github
-ghcl() { git clone git@github.com:$1.git $2; }
+ghcl() { git clone --recurse-submodules git@github.com:$1.git $2; }
 ghsub() { git submodule add git@github.com:$1.git $2; }
 
 # Ports
