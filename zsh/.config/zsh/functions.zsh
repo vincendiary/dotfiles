@@ -7,7 +7,9 @@ gfo() { git fetch origin $1:$1; }
 
 # Github
 ghcl() { git clone --recurse-submodules git@github.com:$1.git $2; }
-ghsub() { git submodule add git@github.com:$1.git $2; }
+ghsm_add() { git submodule add git@github.com:$1.git $2; }
+ghre_add() { git remote add origin git@github.com:$1.git; }
+ghre_set() { git remote set-url origin git@github.com:$1.git; }
 
 # Ports
 port() {

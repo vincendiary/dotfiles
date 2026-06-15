@@ -7,19 +7,21 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 # Git
+alias g="git"
 alias ga="git add"
+alias grm="git rm"
 alias gc="git commit"
 alias gco="git checkout"
 alias grb="git rebase"
 alias gs="git status"
 alias gl="git log --oneline --graph --decorate"
 alias gf="git fetch"
-alias gp="git pull"
+alias pull="git pull"
 alias push="git push"
 
 ## Submodules
-alias gsub="git submodule"
-alias gsubpull="git submodule update --init --recursive"
+alias gsm="git submodule"
+alias gsmpull="git submodule update --init --recursive"
 
 # Reload
 alias reload="source $ZDOTDIR/.zshrc"
