@@ -1,5 +1,7 @@
 # ~/.config/zsh/.zshrc
 
+export ZDOTDIR="$HOME/.config/zsh"
+
 # Order matters: exports first, aliases last
 local files=(
 	exports
