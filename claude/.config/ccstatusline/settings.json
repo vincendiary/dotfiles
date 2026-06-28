@@ -3,19 +3,9 @@
   "lines": [
     [
       {
-        "id": "9aa09528-b28e-4980-8c92-9257a92732b2",
-        "type": "custom-symbol",
-        "customSymbol": "🤖"
-      },
-      {
-        "id": "258d2af8-47a6-46de-8a98-23edf971d5b6",
-        "type": "separator",
-        "character": " "
-      },
-      {
         "id": "1",
         "type": "model",
-        "color": "yellow",
+        "color": "brightMagenta",
         "rawValue": true
       },
       {
@@ -41,24 +31,13 @@
         "rawValue": true
       },
       {
-        "id": "f6b30e13-db8a-4833-9a6e-b8b3d58dc912",
-        "type": "separator",
-        "character": "|"
-      },
-      {
-        "id": "93b0d3f9-452a-403a-8013-b097e26a4f91",
-        "type": "custom-command",
-        "color": "",
-        "commandPath": "~/.claude/plugins/marketplaces/caveman/src/hooks/caveman-statusline.sh"
-      },
-      {
         "id": "7f7a4a18-65c7-4ee2-8cee-40183248359d",
         "type": "flex-separator"
       },
       {
         "id": "c5385361-f70c-4a17-8ca5-6399bc338af9",
         "type": "compaction-counter",
-        "color": "green"
+        "color": "brightYellow"
       },
       {
         "id": "07a228f7-6c92-4e72-9c73-32012955d8c8",
@@ -68,10 +47,10 @@
       {
         "id": "d4cf5bb5-7d85-4803-9ed6-4200410f2045",
         "type": "context-bar",
-        "color": "",
+        "color": "brightRed",
         "rawValue": true,
         "metadata": {
-          "display": "progress-short"
+          "display": "slider"
         }
       }
     ],
@@ -79,7 +58,7 @@
       {
         "id": "e31aa3d6-94e1-4149-96c3-a50312a64c47",
         "type": "git-origin-repo",
-        "color": "cyan"
+        "color": "white"
       },
       {
         "id": "80ffb226-89a4-45a7-9902-49b82f40c8e5",
@@ -108,40 +87,18 @@
       {
         "id": "67fb2310-a0ca-4b3c-8018-7ec5a64a2a9d",
         "type": "session-clock",
-        "rawValue": true,
-        "color": "magenta"
+        "color": "brightBlue",
+        "rawValue": true
       },
       {
         "id": "0b2a879c-a383-4b7c-b151-9a7e47d0f3b6",
         "type": "separator",
-        "character": "-"
+        "character": " "
       },
       {
         "id": "e0870bfc-cde0-4ce9-969b-4da8efc127ed",
         "type": "session-cost",
-        "rawValue": true,
-        "color": "green"
-      },
-      {
-        "id": "2defd09d-8095-4b71-acbc-31f060e280e6",
-        "type": "separator",
-        "character": "|"
-      },
-      {
-        "id": "179e4a9e-7d00-454b-8938-5dd325138f1d",
-        "type": "tokens-total",
-        "rawValue": false,
-        "color": "blue"
-      },
-      {
-        "id": "93a2d572-da05-4e8f-a4cd-82bf71dc8449",
-        "type": "separator",
-        "character": "-"
-      },
-      {
-        "id": "1c811b5f-8b36-4c6f-9b1e-c38b43099aae",
-        "type": "total-speed",
-        "color": "yellow",
+        "color": "brightGreen",
         "rawValue": true
       }
     ],
