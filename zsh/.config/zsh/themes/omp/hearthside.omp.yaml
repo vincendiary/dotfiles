@@ -23,32 +23,28 @@ blocks:
         style: diamond
         background: "p:purple"
         foreground: "p:text"
-        leading_diamond: "\ue0c7"
-        template: "  {{.Icon}} "
+        leading_diamond: "\ue0b6"
+        template: "{{.Icon}} "
       - type: session
         style: powerline
         background: "p:red"
         foreground: "p:text"
-        powerline_symbol: "\ue0c6"
+        powerline_symbol: "\ue0b0"
         template: " {{ .UserName }}@{{ .HostName }} "
       - type: path
         style: powerline
         background: "p:salmon"
         foreground: "p:text"
-        powerline_symbol: "\ue0c6"
+        powerline_symbol: "\ue0b0"
         options:
           home_icon: "~"
           style: agnoster_full
-        template: " \uf07b {{ .Path }} "
-  - type: prompt
-    alignment: right
-    segments:
+        template: " \uf07b {{ .Path }}"
       - type: git
-        style: powerline
+        style: diamond
         background: "p:purple"
         foreground: "p:text"
-        powerline_symbol: "\ue0c7"
-        invert_powerline: true
+        trailing_diamond: "\ue0b4"
         options:
           branch_icon: "\ue725 "
           cherry_pick_icon: "\ue29b "
@@ -60,15 +56,7 @@ blocks:
           rebase_icon: "\ue728 "
           revert_icon: "\uf0e2 "
           tag_icon: "\uf412 "
-        template: "  {{ .HEAD }} "
-      - type: time
-        style: diamond
-        background: "p:salmon"
-        foreground: "p:text"
-        trailing_diamond: "\ue0c6"
-        options:
-          time_format: "3:04:05 PM"
-        template: "  \uf4ab {{ .CurrentDate | date .Format }} "
+        template: " {{ .HEAD }}"
   - type: prompt
     alignment: left
     newline: true
