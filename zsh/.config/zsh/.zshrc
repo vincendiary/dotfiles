@@ -6,8 +6,8 @@ export ZDOTDIR="$HOME/.config/zsh"
 local files=(
 	exports
 	options
-	plugins
 	completions
+	plugins
 	keybinds
 	functions
 	aliases

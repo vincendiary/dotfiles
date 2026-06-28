@@ -10,3 +10,6 @@ export PATH
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# zoxide
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
