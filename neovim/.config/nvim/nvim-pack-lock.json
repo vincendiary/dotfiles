@@ -26,6 +26,14 @@
       "rev": "84a4987ff36798c2fc1169cbaff67960aed9776f",
       "src": "https://github.com/NMAC427/guess-indent.nvim"
     },
+    "horizon-extended.nvim": {
+      "rev": "f4c35c9ed712c4b615bed3d99a535ec68f27998c",
+      "src": "https://github.com/lancewilhelm/horizon-extended.nvim"
+    },
+    "horizon.nvim": {
+      "rev": "48b4c6a8e1f1c6fa5b4f5bef693a1ea6bc1b7abb",
+      "src": "https://github.com/pbaekgaard/horizon.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "0a695750d747db1e7e70bcf0267ef8951c95fc83",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
