@@ -17,4 +17,4 @@
 
 # oh-my-posh
 command -v oh-my-posh &>/dev/null &&
-	eval "$(oh-my-posh init zsh --config $ZDOTDIR/themes/omp/hearthside.omp.yaml)"
+	eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/themes/hearthside.omp.yaml)"
