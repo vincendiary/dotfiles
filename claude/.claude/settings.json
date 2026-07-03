@@ -1,6 +1,6 @@
 {
   "permissions": {
-    "defaultMode": "auto"
+    "defaultMode": "acceptEdits"
   },
   "hooks": {
     "PreToolUse": [
@@ -45,5 +45,6 @@
   "theme": "auto",
   "editorMode": "normal",
   "autoCompactEnabled": false,
-  "inputNeededNotifEnabled": true
+  "inputNeededNotifEnabled": true,
+  "model": "sonnet"
 }
