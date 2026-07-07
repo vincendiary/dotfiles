@@ -2,6 +2,7 @@
   "permissions": {
     "defaultMode": "acceptEdits"
   },
+  "model": "opus",
   "hooks": {
     "PreToolUse": [
       {
@@ -45,6 +46,5 @@
   "theme": "auto",
   "editorMode": "normal",
   "autoCompactEnabled": false,
-  "inputNeededNotifEnabled": true,
-  "model": "sonnet"
+  "inputNeededNotifEnabled": true
 }
