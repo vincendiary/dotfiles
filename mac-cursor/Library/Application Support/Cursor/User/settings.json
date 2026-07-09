@@ -1,1 +1,125 @@
-{}
+{
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
+  "[github-actions-workflow]": {
+    "gitlens.codeLens.scopes": ["document"]
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+  "breadcrumbs.enabled": true,
+  "claudeCode.enableNewConversationShortcut": true,
+  "claudeCode.initialPermissionMode": "acceptEdits",
+  "claudeCode.preferredLocation": "sidebar",
+  "cursor.composer.queueMessageDefaultBehavior": "stop-and-send",
+  "cursor.composer.textSizeScale": 1,
+  "cursor.cpp.enablePartialAccepts": true,
+  "dart.addSdkToTerminalPath": false,
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.sortImports": "explicit"
+  },
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": true,
+  "editor.fontFamily": "'Maple Mono NF', 'CaskaydiaCove Nerd Font', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineHeight": 1.6,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": true,
+  "editor.renderLineHighlight": "all",
+  "editor.rulers": [100],
+  "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.suggest.preview": true,
+  "editor.wordWrap": "on",
+  "emojisense.languages": {
+    "*": true
+  },
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": "all",
+  "git.autorefresh": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "never",
+  "githubPullRequests.pullBranch": "never",
+  "json.schemaDownload.enable": true,
+  "markdown.preview.fontSize": 16,
+  "prettier.documentSelectors": ["**/*.svelte"],
+  "redhat.telemetry.enabled": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.next": true
+  },
+  "svelte.enable-ts-plugin": true,
+  "tailwindCSS.experimental.classRegex": [
+    ["\\$derived\\(([^)]*)\\)", "'([^']*)'"],
+    ["\\$derived\\(([^)]*)\\)", "\"([^\"]*)\""],
+    ["\\$derived\\(([^)]*)\\)", "`([^`]*)`"],
+    [
+      "\\$derived\\.by\\(\\s*\\(\\)\\s*=>\\s*(\\{[\\s\\S]*?\\})\\s*\\)",
+      "'([^']*)'"
+    ],
+    [
+      "\\$derived\\.by\\(\\s*\\(\\)\\s*=>\\s*(\\{[\\s\\S]*?\\})\\s*\\)",
+      "\"([^\"]*)\""
+    ],
+    [
+      "\\$derived\\.by\\(\\s*\\(\\)\\s*=>\\s*(\\{[\\s\\S]*?\\})\\s*\\)",
+      "`([^`]*)`"
+    ]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "svelte": "html"
+  },
+  "terminal.integrated.fontFamily": "'Maple Mono NF', 'CaskaydiaCove Nerd Font', Consolas, 'Courier New', monospace",
+  "window.autoDetectColorScheme": false,
+  "window.commandCenter": true,
+  "window.newWindowProfile": "Default",
+  "window.zoomLevel": 1,
+  "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 16,
+  "editor.defaultColorDecorators": "always",
+  "workbench.agentsWindowButton.enabled": false,
+  "terminal.integrated.scrollback": 10000,
+  "git.replaceTagsWhenPull": true,
+  "githubPullRequests.createOnPublishBranch": "never",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "remote.autoForwardPorts": false,
+  "cursor.cpp.disabledLanguages": [],
+  "terminal.integrated.enablePersistentSessions": false
+}
