@@ -7,3 +7,9 @@
 
 /.claude/
 /.codex/
+claude/.claude/.caveman-mode-log.jsonl
+claude/.claude/.last-cleanup
+claude/.claude/.last-update-result.json
+claude/.claude/settings.json.bak
+codex/.codex/packages/
+codex/.codex/tmp/
