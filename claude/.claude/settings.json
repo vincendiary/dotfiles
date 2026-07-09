@@ -2,19 +2,9 @@
   "permissions": {
     "defaultMode": "acceptEdits"
   },
-  "model": "opus",
+  "model": "fable",
   "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "rtk hook claude"
-          }
-        ]
-      }
-    ]
+    "PreToolUse": []
   },
   "workflowKeywordTriggerEnabled": false,
   "statusLine": {
