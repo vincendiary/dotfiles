@@ -2,9 +2,19 @@
   "permissions": {
     "defaultMode": "acceptEdits"
   },
-  "model": "fable",
+  "model": "opus",
   "hooks": {
-    "PreToolUse": []
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/vee/.claude/hooks/worktree-guard.sh"
+          }
+        ]
+      }
+    ]
   },
   "workflowKeywordTriggerEnabled": false,
   "statusLine": {
@@ -15,7 +25,8 @@
   },
   "enabledPlugins": {
     "caveman@caveman": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "chrome-devtools-mcp@chrome-devtools-plugins": true
   },
   "extraKnownMarketplaces": {
     "caveman": {
@@ -28,6 +39,12 @@
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
       }
     }
   },
