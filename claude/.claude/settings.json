@@ -2,7 +2,7 @@
   "permissions": {
     "defaultMode": "acceptEdits"
   },
-  "model": "opus",
+  "model": "fable",
   "hooks": {
     "PreToolUse": [
       {
@@ -17,6 +17,12 @@
     ]
   },
   "workflowKeywordTriggerEnabled": false,
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0,
+    "refreshInterval": 10
+  },
   "enabledPlugins": {
     "caveman@caveman": true,
     "ponytail@ponytail": true,
@@ -42,16 +48,10 @@
       }
     }
   },
-  "effortLevel": "low",
+  "effortLevel": "medium",
   "tui": "fullscreen",
   "theme": "auto",
   "editorMode": "normal",
   "autoCompactEnabled": false,
-  "inputNeededNotifEnabled": true,
-  "statusLine": {
-    "type": "command",
-    "command": "bunx -y ccstatusline@latest",
-    "padding": 0,
-    "refreshInterval": 10
-  }
+  "inputNeededNotifEnabled": true
 }
