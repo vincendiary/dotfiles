@@ -64,10 +64,10 @@
       {
         "id": "37b37a81-6d1c-47a7-a5a4-2fc7dec40543",
         "type": "git-changes",
+        "color": "yellow",
         "metadata": {
           "hideNoGit": "true"
-        },
-        "color": "yellow"
+        }
       },
       {
         "id": "7f7a4a18-65c7-4ee2-8cee-40183248359d",
@@ -149,7 +149,7 @@
     "continueThemeAcrossLines": false
   },
   "installation": {
-    "method": "pinned",
-    "installedVersion": "2.2.22"
+    "method": "auto-update",
+    "packageManager": "bun"
   }
 }

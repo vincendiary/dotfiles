@@ -36,6 +36,63 @@ killport() {
 	kill $port
 }
 
+# Tickets
+clipcopy() {
+	if command -v clip.exe &>/dev/null; then
+		print -rn -- "$1" | clip.exe
+	elif command -v pbcopy &>/dev/null; then
+		print -rn -- "$1" | pbcopy
+	elif command -v xclip &>/dev/null; then
+		print -rn -- "$1" | xclip -selection clipboard
+	elif command -v wl-copy &>/dev/null; then
+		print -rn -- "$1" | wl-copy
+	else
+		# OSC52: escape to host terminal clipboard (via tty so it never pollutes stdout capture)
+		printf '\e]52;c;%s\a' "$(print -rn -- "$1" | base64 | tr -d '\n')" >/dev/tty
+	fi
+}
+acmtccw() {
+	local b
+	b=$(acmtb "$1") || { print -r -- "$b"; return 1; }
+	claude -w "$b"
+}
+acmtb() {
+	if [[ -z $1 ]]; then
+		echo "error: ticket number is required"
+		return 1
+	fi
+	local tickets=$OAC_TICKETS
+	if [[ ! -d $tickets ]]; then
+		local d=$PWD
+		while [[ $d != / ]]; do
+			[[ -d $d/.vincendiary/tickets ]] && tickets=$d/.vincendiary/tickets && break
+			d=${d:h}
+		done
+	fi
+	if [[ ! -d $tickets ]]; then
+		echo "error: .vincendiary/tickets not found (run inside oac dir or set OAC_TICKETS)"
+		return 1
+	fi
+	local num=${1#acmt-}
+	local dir=($tickets/acmt-${num}_*(N))
+	if [[ -z $dir ]]; then
+		echo "error: no ticket folder for acmt-$num"
+		return 1
+	fi
+	local file
+	for file in $dir/plan.md $dir/input.md; do
+		[[ -f $file ]] || continue
+		local branch=$(sed -n 's/^[Bb]ranch: *//p' $file | head -1 | tr -d '`')
+		if [[ -n $branch ]]; then
+			clipcopy "$branch"
+			echo "$branch"
+			return 0
+		fi
+	done
+	echo "error: no branch found in $dir"
+	return 1
+}
+
 # WSL
 keep_current_path() {
 	command -v wslpath &>/dev/null &&

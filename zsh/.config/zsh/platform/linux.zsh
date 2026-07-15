@@ -8,7 +8,7 @@ path+=($PNPM_HOME/bin)
 export PATH
 
 # linuxbrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+[ -x /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
 # zoxide
 command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"

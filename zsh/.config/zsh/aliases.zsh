@@ -34,8 +34,20 @@ alias rekeybind="source $ZDOTDIR/keybinds.zsh"
 alias recompletion="source $ZDOTDIR/completions.zsh"
 alias replugin="source $ZDOTDIR/plugins.zsh"
 
+# devcontainers
+alias devreup="devcontainer up --remove-existing-container"
+alias devsh="devcontainer exec zsh"
+
+# claude code
+alias ccw="claude -w"
+alias ccn="claude -n"
+alias ccresume="claude -r"
+alias ccdsp="claude --dangerously-skip-permissions"
+
 # Misc
 alias ls="eza --icons=always"
 alias code="cursor"
 alias vi="nvim"
 alias vim="nvim"
+alias cl="clear"
+
