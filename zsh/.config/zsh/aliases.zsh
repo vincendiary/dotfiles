@@ -19,6 +19,7 @@ alias gl="git log --oneline --graph --decorate"
 alias gf="git fetch"
 alias pull="git pull"
 alias push="git push"
+alias pushf="git push --force-with-lease"
 
 ## Submodules
 alias gsm="git submodule"

@@ -2,7 +2,7 @@
   "permissions": {
     "defaultMode": "acceptEdits"
   },
-  "model": "fable",
+  "model": "opus",
   "hooks": {
     "PreToolUse": [
       {
@@ -48,8 +48,9 @@
       }
     }
   },
-  "effortLevel": "medium",
+  "effortLevel": "low",
   "tui": "fullscreen",
+  "autoMemoryEnabled": false,
   "theme": "auto",
   "editorMode": "normal",
   "autoCompactEnabled": false,
