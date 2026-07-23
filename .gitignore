@@ -5,6 +5,8 @@
 .zhistory
 .zshrc.local
 
+/.vscode/
+
 /.claude/
 /.codex/
 claude/.claude/.caveman-mode-log.jsonl

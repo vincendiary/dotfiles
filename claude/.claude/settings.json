@@ -26,7 +26,8 @@
   "enabledPlugins": {
     "caveman@caveman": true,
     "ponytail@ponytail": true,
-    "chrome-devtools-mcp@chrome-devtools-plugins": true
+    "chrome-devtools-mcp@chrome-devtools-plugins": true,
+    "codex@openai-codex": true
   },
   "extraKnownMarketplaces": {
     "caveman": {
@@ -45,6 +46,12 @@
       "source": {
         "source": "github",
         "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
       }
     }
   },
