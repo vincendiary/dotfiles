@@ -53,10 +53,10 @@ clipcopy() {
 }
 acmtccw() {
 	local b
-	b=$(acmtb "$1") || { print -r -- "$b"; return 1; }
+	b=$(acmtbranch "$1") || { print -r -- "$b"; return 1; }
 	claude -w "$b"
 }
-acmtb() {
+acmtbranch() {
 	if [[ -z $1 ]]; then
 		echo "error: ticket number is required"
 		return 1
@@ -84,13 +84,17 @@ acmtb() {
 		[[ -f $file ]] || continue
 		local branch=$(sed -n 's/^[Bb]ranch: *//p' $file | head -1 | tr -d '`')
 		if [[ -n $branch ]]; then
-			clipcopy "$branch"
 			echo "$branch"
 			return 0
 		fi
 	done
 	echo "error: no branch found in $dir"
 	return 1
+}
+acmtcopybranch() {
+	local b
+	b=$(acmtbranch "$1") || { print -r -- "$b"; return 1; }
+	clipcopy "$b"
 }
 
 # WSL
