@@ -38,7 +38,7 @@ blocks:
         powerline_symbol: "\ue0b0"
         options:
           home_icon: "~"
-          style: agnoster_full
+          style: agnoster
         template: " \uf07b {{ .Path }}"
       - type: git
         style: diamond
