@@ -6,6 +6,7 @@ path=(
 	$HOME/.local/bin
 	$HOME/.cargo/bin
 	$HOME/.bun/bin
+	$HOME/.opencode/bin
 	$path
 )
 export PATH
