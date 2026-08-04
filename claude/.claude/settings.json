@@ -3,19 +3,6 @@
     "defaultMode": "acceptEdits"
   },
   "model": "opus",
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Edit|Write|NotebookEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/home/vee/.claude/hooks/worktree-guard.sh"
-          }
-        ]
-      }
-    ]
-  },
   "workflowKeywordTriggerEnabled": false,
   "statusLine": {
     "type": "command",
@@ -55,7 +42,7 @@
       }
     }
   },
-  "effortLevel": "low",
+  "effortLevel": "medium",
   "tui": "fullscreen",
   "autoMemoryEnabled": false,
   "theme": "auto",
