@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "lines": [
     [
       {
@@ -40,7 +40,7 @@
         "type": "git-origin-repo",
         "color": "white",
         "metadata": {
-          "hideNoRemote": "true"
+          "hide": "no-remote"
         }
       },
       {
@@ -53,7 +53,7 @@
         "type": "git-worktree",
         "color": "green",
         "metadata": {
-          "hideNoGit": "true"
+          "hide": "no-git"
         }
       },
       {
@@ -66,7 +66,7 @@
         "type": "git-changes",
         "color": "yellow",
         "metadata": {
-          "hideNoGit": "true"
+          "hide": "no-git"
         }
       },
       {
@@ -100,7 +100,7 @@
         "color": "cyan",
         "rawValue": false,
         "metadata": {
-          "hideNoGit": "true"
+          "hide": "no-git"
         }
       },
       {

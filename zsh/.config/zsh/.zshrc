@@ -24,6 +24,6 @@ Linux) [[ -f "$ZDOTDIR/platform/linux.zsh" ]] && source "$ZDOTDIR/platform/linux
 esac
 
 # Local overrides
-[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+[[ -f "$ZDOTDIR/.zshrc.local" ]] && source "$ZDOTDIR/.zshrc.local"
 
 return 0

@@ -1,6 +1,10 @@
 # ~/.config/zsh/completions.zsh
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case-insensitive completion
+# global substring and case-insensitive matching
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# ignore remote branches on first tab
+zstyle ':completion:*:*:git-checkout:*' tag-order 'heads-local' 'heads-remote' '*'
+
 fpath+=$ZDOTDIR/plugins/zsh-completions/src
 
 autoload -Uz compinit

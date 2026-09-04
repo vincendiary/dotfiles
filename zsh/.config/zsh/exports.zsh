@@ -22,3 +22,7 @@ export BUN_INSTALL="$HOME/.bun"
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 export GVM_DIR="$HOME/.gvm"
+export GIT_OPTIONAL_LOCKS=0
+
+# claude code
+export CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=1

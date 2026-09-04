@@ -1,15 +1,14 @@
 # ~/.config/zsh/functions.zsh
 
 # Git
-gcm() { git commit -m "$1"; }
 gca() { git commit --amend; }
 gfo() { git fetch origin $1:$1; }
 
 # Github
 ghcl() { git clone --recurse-submodules git@github.com:$1.git $2; }
-ghsm_add() { git submodule add git@github.com:$1.git $2; }
-ghre_add() { git remote add origin git@github.com:$1.git; }
-ghre_set() { git remote set-url origin git@github.com:$1.git; }
+ghsubadd() { git submodule add git@github.com:$1.git $2; }
+ghremadd() { git remote add origin git@github.com:$1.git; }
+ghremset() { git remote set-url origin git@github.com:$1.git; }
 
 # Ports
 port() {
@@ -50,51 +49,6 @@ clipcopy() {
 		# OSC52: escape to host terminal clipboard (via tty so it never pollutes stdout capture)
 		printf '\e]52;c;%s\a' "$(print -rn -- "$1" | base64 | tr -d '\n')" >/dev/tty
 	fi
-}
-acmtccw() {
-	local b
-	b=$(acmtbranch "$1") || { print -r -- "$b"; return 1; }
-	claude -w "$b"
-}
-acmtbranch() {
-	if [[ -z $1 ]]; then
-		echo "error: ticket number is required"
-		return 1
-	fi
-	local tickets=$OAC_TICKETS
-	if [[ ! -d $tickets ]]; then
-		local d=$PWD
-		while [[ $d != / ]]; do
-			[[ -d $d/.vincendiary/tickets ]] && tickets=$d/.vincendiary/tickets && break
-			d=${d:h}
-		done
-	fi
-	if [[ ! -d $tickets ]]; then
-		echo "error: .vincendiary/tickets not found (run inside oac dir or set OAC_TICKETS)"
-		return 1
-	fi
-	local num=${1#acmt-}
-	local dir=($tickets/acmt-${num}_*(N))
-	if [[ -z $dir ]]; then
-		echo "error: no ticket folder for acmt-$num"
-		return 1
-	fi
-	local file
-	for file in $dir/plan.md $dir/input.md; do
-		[[ -f $file ]] || continue
-		local branch=$(sed -n 's/^[Bb]ranch: *//p' $file | head -1 | tr -d '`')
-		if [[ -n $branch ]]; then
-			echo "$branch"
-			return 0
-		fi
-	done
-	echo "error: no branch found in $dir"
-	return 1
-}
-acmtcopybranch() {
-	local b
-	b=$(acmtbranch "$1") || { print -r -- "$b"; return 1; }
-	clipcopy "$b"
 }
 
 # WSL
