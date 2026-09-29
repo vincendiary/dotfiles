@@ -34,8 +34,6 @@ killport() {
 	fi
 	kill $port
 }
-
-# Tickets
 clipcopy() {
 	if command -v clip.exe &>/dev/null; then
 		print -rn -- "$1" | clip.exe
@@ -49,6 +47,9 @@ clipcopy() {
 		# OSC52: escape to host terminal clipboard (via tty so it never pollutes stdout capture)
 		printf '\e]52;c;%s\a' "$(print -rn -- "$1" | base64 | tr -d '\n')" >/dev/tty
 	fi
+}
+fzfc() {
+	clipcopy "$(fzf)"
 }
 
 # WSL

@@ -20,8 +20,9 @@ alias gl="git log --oneline --graph --decorate"
 alias gf="git fetch"
 alias grem="git remote -v"
 alias pull="git pull"
-alias push="git push"
-alias pushf="git push --force-with-lease"
+alias push="git push --no-verify"
+alias pushf="git push --force-with-lease --no-verify"
+alias wtexit="git worktree remove --force . && exit"
 
 ## Submodules
 alias gsm="git submodule"
